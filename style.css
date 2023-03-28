@@ -1,0 +1,241 @@
+/* police de toute la page */
+/* mise en page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "U8", Arial, Helvetica, sans-serif;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+}
+
+body {
+    height: 100vh;
+    cursor: url(../Images/curseur.png), pointer;
+}
+
+/* disposition des cases */
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blanc1,
+.blanc2 {
+    height: 20%;
+}
+
+.jaune,
+.rose,
+.vert,
+.violet {
+    height: 40%;
+}
+
+
+main section {
+    border: 3px solid;
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+.blanc1 {
+    padding-left: 10px;
+}
+
+/* centrer les textes des cases */
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* style texte */
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+/* couleur des cases */
+.blanc1 p {
+    background-color: white;
+    height: 100%;
+}
+
+.blanc2 p {
+    background-color: white;
+    height: 100%;
+}
+
+.violet {
+    background-color: #C3A5F5;
+}
+
+.rose {
+    background-color: #FFA9AF;
+}
+
+.jaune {
+    background-color: #FFE000;
+}
+
+.vert {
+    background-color: #3CC8AA;
+}
+
+/* resposive */
+section:nth-child(2) {
+    order: 1;
+}
+
+.box {
+    display: none;
+}
+
+.tagline>p,
+.text>p {
+    display: none;
+}
+
+.tagline span {
+    font-size: 50px;
+}
+
+.blanc2 .info{
+    display: none;
+}
+
+.blanc2 .reseaux{
+    font-size: 50px;
+}
+
+.reseaux{
+    padding-left: 10px;
+}
+
+/* version destop */
+@media screen and (min-width: 768px) {
+    main {
+        flex-wrap: wrap;
+        flex-direction:row;
+    }
+
+    section:nth-child(2) {
+        order: 0;
+    }
+
+    
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 10px;
+    }
+
+    .text p {
+        display: block;
+    }
+
+    .tagline {
+        display: flex; 
+    }
+
+    .tagline span {
+        font-size: 15px;
+    }
+
+    .blanc1 {
+        justify-content: space-between;
+    }
+
+.blanc2{
+    justify-content: space-between;
+    
+}
+
+    .blanc2 .info{
+        display: block;
+    }
+    
+    .blanc2 .reseaux{
+        font-size: 15px;
+    }
+
+    .info {
+        display: flex;
+        align-items: flex-end;
+        padding-right: 10px;
+    }
+
+    /* menu hamburger */
+    .box {
+        display: block;
+        background-color: transparent;
+        width: 64px;
+        height: 64px;
+        border: 0.4rem solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0.5rem;
+        margin: 0;
+        margin-right: 200px;
+    }
+
+    .box:hover .LigneA {
+        transform: translateY(20px);
+        transition: 0.3 ease-in-out;
+    }
+
+    .box:hover .LigneB {
+        transform: rotate(90deg);
+        transition: 0.3s ease-in-out;
+    }
+
+    .box:hover .LigneC {
+        visibility: hidden;
+        transition: 0;
+    }
+
+    .box .LigneA {
+        background-color: black;
+        width: 95%;
+        height: 0.4rem;
+    }
+
+    .box .LigneB {
+        background-color: black;
+        width: 95%;
+        height: 0.4rem;
+    }
+
+    .box .LigneC {
+        background-color: black;
+        width: 95%;
+        height: 0.4rem;
+    }
+
+/* animation texte h1 */
+section:hover h1 {
+    transform: scale(1.2);
+    transition: .6s;
+}
+
+
+
+}
